@@ -102,10 +102,10 @@ do
   vim.g.have_nerd_font = true
 
   vim.opt.guicursor = {
-  "n-v-c:block",
-  "i:block",
-  "r:block",
-}
+    'n-v-c:block',
+    'i:block',
+    'r:block',
+  }
 
   -- [[ Setting options ]]
   --  See `:help vim.o`
@@ -838,8 +838,9 @@ do
     format_on_save = function(bufnr)
       -- You can specify filetypes to autoformat on save here:
       local enabled_filetypes = {
-        -- lua = true,
-        -- python = true,
+        lua = true,
+        python = true,
+        go = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
         return { timeout_ms = 500 }
@@ -1049,3 +1050,6 @@ end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+
+require 'config.lsp'

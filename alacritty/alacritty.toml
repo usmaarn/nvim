@@ -1,0 +1,47 @@
+[window]
+padding = { x = 10, y = 8 }
+decorations = "Buttonless"
+opacity = 1.0
+startup_mode = "Fullscreen"
+
+[font]
+normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
+bold = { family = "MesloLGS Nerd Font Mono", style = "Bold" }
+italic = { family = "MesloLGS Nerd Font Mono", style = "Italic" }
+
+size = 15.0
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[colors.primary]
+background = "#181818"
+foreground = "#D4D4D4"
+
+[colors.cursor]
+text = "#181818"
+cursor = "#AEAFAD"
+
+[colors.selection]
+text = "#FFFFFF"
+background = "#264F78"
+
+[colors.normal]
+black = "#000000"
+red = "#CD3131"
+green = "#0DBC79"
+yellow = "#E5E510"
+blue = "#2472C8"
+magenta = "#BC3FBC"
+cyan = "#11A8CD"
+white = "#E5E5E5"
+
+[colors.bright]
+black = "#666666"
+red = "#CD3131"
+green = "#0DBC79"
+yellow = "#F5F543"
+blue = "#2472C8"
+magenta = "#BC3FBC"
+cyan = "#11A8CD"
+white = "#E5E5E5"
