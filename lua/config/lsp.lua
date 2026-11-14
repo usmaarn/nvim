@@ -1,10 +1,20 @@
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*.go',
-  callback = function()
-    vim.lsp.buf.code_action {
-      context = { only = { 'source.organizeImports' } },
-      apply = true,
-    }
-    vim.lsp.buf.format { async = false }
-  end,
+require("mason").setup({})
+require("mason-lspconfig").setup({
+	ensure_installed = { "lua_ls", "gopls", "rust_analyzer", "ts_ls", "sqlls", "pyright", "svelte", "cssls", "html", "tailwindcss" },
+})
+
+
+vim.lsp.config("lua_ls", {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            },
+            workspace = {
+                library = {
+                    vim.env.VIMRUNTIME,
+                },
+            },
+        },
+    },
 })

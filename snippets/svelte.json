@@ -1,0 +1,3 @@
+{
+	"Iconify Icon": {"prefix": "icn", "body": "<span class=\"icon-[${1:icon-name}]\"></span>"}
+}
