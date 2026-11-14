@@ -12,4 +12,4 @@ require("catppuccin").setup({
 	term_colors = true,
 })
 
-vim.cmd.colorscheme "catppuccin-nvim"
+vim.cmd.colorscheme "tokyonight-night"

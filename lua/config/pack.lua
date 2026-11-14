@@ -16,4 +16,6 @@ vim.pack.add({
 	gh "mason-org/mason-lspconfig.nvim",
 	gh "christoomey/vim-tmux-navigator",
 	gh "kawre/neotab.nvim",
+	gh "folke/tokyonight.nvim",
+	gh "ellisonleao/gruvbox.nvim",
 })
