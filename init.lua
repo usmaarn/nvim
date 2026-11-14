@@ -21,22 +21,19 @@ vim.pack.add({
 	gh "mason-org/mason-lspconfig.nvim",
 	gh "christoomey/vim-tmux-navigator",
 	gh "kawre/neotab.nvim",
-	{
-		src = gh "thesimonho/kanagawa-paper",
-		version = "neovim", -- tracks the 'neovim' branch
+	gh "catppuccin/nvim",
+})
+
+require("catppuccin").setup({
+	flavour = "mocha",
+	transparent_background = true,
+	float = {
+		transparent = true,
+		solid = false,
 	},
-	gh "folke/tokyonight.nvim",
-	gh "scottmckendry/cyberdream.nvim",
+	term_colors = true,
 })
-require("cyberdream").setup({
-  variant = "default",
-  transparent = true,
-  italic_comments = true,
-  saturation = 1,
-  terminal_colors = true,
-  hide_fillchars = false,
-})
-vim.cmd.colorscheme "cyberdream"
+vim.cmd.colorscheme "catppuccin-nvim"
 
 require("config.treesitter")
 
@@ -49,3 +46,5 @@ require("config.cmp")
 
 -- Keymaps
 require("config.keymaps")
+
+require("config.noice")
