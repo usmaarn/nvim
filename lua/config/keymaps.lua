@@ -1,5 +1,5 @@
-local Snacks = require("snacks")
 local map = vim.keymap.set
+local Snacks = require("snacks")
 
 -- --- Files / search ---------------------------------------------------------
 map("n", "<leader><space>", function() Snacks.picker.smart() end, { desc = "Smart find" })
@@ -40,3 +40,11 @@ map("n", "<leader>cf", vim.lsp.buf.format, { desc = "format buffer" })
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next diagnostic" })
 map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Previous diagnostic" })
+
+
+-- Seamless <C-h/j/k/l> movement between Neovim splits and tmux panes.
+map("n", "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>")
+map("n", "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>")
+map("n", "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>")
+map("n", "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>")
+map("n", "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>")
