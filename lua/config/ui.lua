@@ -23,32 +23,3 @@ require("lualine").setup({
     },
     extensions = { "mason", "trouble", "quickfix" },
 })
-
--- Modern command line, messages and popup menu.
-require("noice").setup({
-    cmdline = { enabled = true, view = "cmdline_popup" },
-    messages = {
-        enabled = true,
-        view = "notify",
-        view_error = "notify",
-        view_warn = "notify",
-    },
-    popupmenu = { enabled = true },
-    presets = {
-        command_palette = true,
-        long_message_to_split = true,
-        lsp_doc_border = true,
-    },
-})
-
--- Press <Space> and wait; which-key shows every available group.
-require("which-key").setup({ preset = "modern" })
-
--- Diagnostics, symbols, references and todos in a nice split.
-require("trouble").setup({})
-
--- Highlight TODO / FIXME / NOTE comments.
-require("todo-comments").setup({})
-
--- Small LSP progress spinner in the bottom-right corner.
-require("fidget").setup({})

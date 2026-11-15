@@ -26,9 +26,6 @@ require("mini.ai").setup()
 -- Add / change / delete surroundings: `sa"`, `sd"`, `sr"'`.
 require("mini.surround").setup()
 
--- Toggle comments with `gcc` / `gc` in visual mode.
--- require("mini.comment").setup()
-
 -- Move lines and selections with Alt+h/j/k/l.
 require("mini.move").setup({
     mappings = {
@@ -43,17 +40,11 @@ require("mini.move").setup({
     },
 })
 
--- Jump to the next/previous match with f/F/t/T improvements.
-require("mini.jump").setup()
-
 -- Split or join arguments / lists.
 require("mini.splitjoin").setup()
 
 -- `]` and `[` motions for buffers, diagnostics, git, etc.
 require("mini.bracketed").setup()
-
--- Subtle animations (cursor, scroll) - purely cosmetic.
-require("mini.animate").setup()
 
 -- Filetype icons for the picker, statusline and explorer.
 require("mini.icons").setup()

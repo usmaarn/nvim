@@ -11,7 +11,6 @@ vim.pack.add({
     gh "folke/snacks.nvim",
     gh "nvim-mini/mini.nvim",
     gh "christoomey/vim-tmux-navigator",
-    gh "abecodes/tabout.nvim",
     gh "tpope/vim-abolish",
     --- LSP ---
     gh "mason-org/mason.nvim",
@@ -21,15 +20,6 @@ vim.pack.add({
     gh "windwp/nvim-ts-autotag",
     --- UI ----
     gh "nvim-lualine/lualine.nvim",
-    gh "MunifTanjim/nui.nvim",
-    gh "rcarriga/nvim-notify",
-    gh "folke/noice.nvim",
-    gh "folke/which-key.nvim",
-    gh "folke/trouble.nvim",
-    gh "nvim-lua/plenary.nvim",
-    gh "folke/todo-comments.nvim",
-    gh "j-hui/fidget.nvim",
-
 })
 
 -- Core settings (fast, no plugins).
@@ -73,14 +63,6 @@ require("config.editor")
 
 --- Lsp Config
 require("config.lsp")
---- Tabout ---
-require("tabout").setup({
-    tabkey = '<Tab>',             -- key to trigger tabout, set to an empty string to disable
-    backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
-    act_as_tab = true,            -- shift content if tab out is not possible
-    act_as_shift_tab = true,      -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-})
-
 
 --- TS AutoTag
 require("nvim-ts-autotag").setup({})
