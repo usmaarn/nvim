@@ -1,20 +1,40 @@
+local opt = vim.o
 
-vim.o.number = true -- Show line numbers in a column.
-vim.o.relativenumber = true
+-- --- Line numbers -----------------------------------------------------------
+opt.number = true -- absolute number on the current line
+opt.relativenumber = true -- relative numbers everywhere else (great for motions)
 
-vim.o.termguicolors = true
+-- --- Appearance -------------------------------------------------------------
+opt.termguicolors = true
+opt.background = "dark"
+opt.winborder = "rounded" -- rounded borders for floating windows
+opt.showmode = false -- the statusline already shows the mode
+opt.laststatus = 3 -- one global statusline instead of one per window
+opt.cursorline = true
+opt.signcolumn = "yes" -- always reserve space, so text never shifts
+opt.fillchars = { eob = " ", fold = " ", diff = "╱", vert = "│" }
 
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
+-- --- Indentation ------------------------------------------------------------
+-- Global defaults. Language exceptions (Go tabs, web 2 spaces) live in autocmds.
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.smartindent = true
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.o.ignorecase = false
-vim.o.smartcase = false
+-- --- Searching --------------------------------------------------------------
+opt.ignorecase = true
+opt.smartcase = true -- ...unless the search contains uppercase
+opt.incsearch = true
+opt.inccommand = "split" -- live preview while typing :s/old/new/
 
-vim.o.cursorline = true -- Highlight the line where the cursor is on.
-vim.o.scrolloff = 10 -- Keep this many screen lines above/below the cursor.
--- vim.o.list = true -- Show <tab> and trailing spaces.
+-- --- Scrolling --------------------------------------------------------------
+opt.scrolloff = 8 -- keep context above/below the cursor
+opt.sidescrolloff = 8
 
--- If performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
--- instead raise a dialog asking if you wish to save the current file(s). See `:h 'confirm'`
-vim.o.confirm = true
+-- --- Files / undo -----------------------------------------------------------
+opt.undofile = true -- persistent undo history
+opt.undolevels = 10000
+opt.confirm = true -- ask to save instead of failing :q
+
+opt.clipboard = "unnamedplus"
